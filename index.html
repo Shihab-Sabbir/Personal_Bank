@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Bank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <section class="flex flex-col justify-center items-center" id="loginPage">
+        <p class="text-center  font-extrabold text-2xl mb-10 mt-20 uppercase">Login Page</p>
+        <div class="p-4" id="createPass">
+            <input type="text" autocomplete="off"
+                class="sm:w-80 w-54 border-2 border-gray-400 focus:border-blue-400 h-12" id="password_input"
+                placeholder="Please Create a Password">
+            <button class="bg-lime-400 p-1 px-2 rounded-md text-sm font-bold text-white  border h-12 w-24"
+                onclick="createPassword()" id="submitBtn">Submit</button>
+        </div>
+        <div class="p-4" id="login">
+            <input type="text" autocomplete="off"
+                class="sm:w-80 w-54 border-2 border-gray-400 focus:border-blue-400 h-12" id="login_input"
+                placeholder="Enter Your Password">
+            <button class="bg-blue-400 p-1 px-3.5 rounded-md text-sm font-bold text-white  border h-12 w-24"
+                onclick="login()">Login</button>
+        </div>
+    </section>
+
+    <section id="bank">
+        <p class="text-center mt-5 font-extrabold text-2xl">PERSONAL BANK</p>
+        <div
+            class="w-full bg-neutral-200 h-96 mt-11 rounded-md grid grid-cols-1 sm:grid-cols-3 gap-4 p-5 place-content-center">
+            <div>
+                <div class="flex flex-col items-center justify-center bg-lime-300 max-h-40 rounded-2xl shadow-lg">
+                    <p class="sm:text-xl text-base uppercase text-center  p-2">Diposite
+                    <p class="font-bold text-2xl text-center" id="diposite">0</p>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="flex flex-col items-center justify-center bg-orange-400 max-h-40 rounded-2xl shadow-lg">
+                    <p class="sm:text-xl text-base uppercase text-center p-2">Withdraw
+                    <p class="font-bold text-2xl text-center" id="withdraw">0</p>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div class="flex flex-col items-center justify-center bg-cyan-500 max-h-40 rounded-2xl shadow-lg">
+                    <p class="sm:text-xl text-base uppercase text-center  p-2">Balance
+                    <p class="font-bold text-2xl text-center" id='currentBalance'>0</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+            <div class="p-4">
+                <input type="number" class="sm:w-80 w-60 border-2 border-gray-400 focus:border-blue-400 h-12"
+                    id="diposite_input" placeholder="Diposite Ammount">
+                <button class=" bg-lime-300 p-1 px-2 rounded-md text-sm font-bold text-white border h-12"
+                    onclick="dipositeAmmount()">Diposite</button>
+            </div>
+            <div class="p-4">
+                <input type="number" class="sm:w-80 w-60 border-2 border-gray-400 focus:border-blue-400 h-12"
+                    id="withdraw_input" placeholder=" Widthdrawal Ammount">
+                <button class="bg-orange-400 p-1 rounded-md text-sm font-bold text-white  border h-12"
+                    onclick="withrawAmmount()">Withdraw</button>
+
+            </div>
+            <div class="mt-10">
+                <button
+                    class="bg-red-400 p-1 rounded-md text-sm font-bold text-white  hover:bg-sky-700 focus:bg-white focus:text-red-600 border focus:border-red-700 h-12 w-24"
+                    onclick="logout()">Logout</button>
+            </div>
+        </div>
+
+    </section>
+    <!-- Bank Function -->
+    <script src="bank.js"></script>
+
+    <!-- Login Function -->
+    <script src="login.js"></script>
+    <!-- Logout Function -->
+    <script src="logout.js"></script>
+</body>
+
+</html>
